@@ -33,6 +33,7 @@ try{
 //funcion para insertar un cliente
 export const postPedidos = async(req, res)=>{
     try{
+        console.log("body", req.body)
         const {cli_id, ped_fecha, usr_id, ped_estado} =req.body
         const [result] = await conmysql.query(' INSERT INTO pedidos (cli_id, ped_fecha, usr_id, ped_estado) VALUES(?,?,?,?)', 
         [cli_id, ped_fecha, usr_id, ped_estado])
