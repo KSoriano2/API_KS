@@ -33,12 +33,12 @@ try{
 //funcion para insertar un cliente
 export const postPedidos = async(req, res)=>{
     try{
-        const {cli_id, ped_fecha, usr_id, ped_estado} =req.body
+        const {ped_id, cli_id, ped_fecha, usr_id, ped_estado} =req.body
         const [result] = await conmysql.query(' INSERT INTO pedidos (cli_id, ped_fecha, usr_id, ped_estado) VALUES(?,?,?,?)', 
         [cli_id, ped_fecha, usr_id, ped_estado])
         
         res.send({
-            id: result.insertId
+            id: ped_id
         })
     }catch(error){
         return res.status(500).json({ message: "error en el servidor"})
