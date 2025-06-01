@@ -38,7 +38,7 @@ export const postPedidos = async(req, res)=>{
         [cli_id, ped_fecha, usr_id, ped_estado])
         
         res.send({
-            id: ped_id
+            id: result.insertId
         })
     }catch(error){
         return res.status(500).json({ message: "error en el servidor"})
