@@ -37,9 +37,7 @@ export const postPedidosDetalle = async(req, res)=>{
         const [result] = await conmysql.query(' INSERT INTO pedidos_detalle (det_id,prod_id, ped_id, det_cantidad, det_precio) VALUES(?,?,?,?,?)', 
         [det_id,prod_id, ped_id, det_cantidad, det_precio])
         
-        res.send({
-            id: det_id
-        })
+        res.send({ id: det_id })
     }catch(error){
         return res.status(500).json({ message: "error en el servidor"})
     }
