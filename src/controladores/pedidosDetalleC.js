@@ -111,3 +111,17 @@ export const deletePedidosDetallexid = async(req, res)=>{
     
 }
     
+export const getPedidosDetallexPedido = async(req, res)=>{
+try{
+    const [result] = await conmysql.query(' select * from pedidos_detalle where ped_id=? ', [req.params.id])
+    if(result.length<=0) return res.status(400).json({
+        cli_id:0,
+        message: "PedidoDetalle no encontrado"
+    })
+
+    res.json(result[0])
+
+} catch (error){
+    return res.status(500).json({ message: "error en el servidor"})
+
+}
