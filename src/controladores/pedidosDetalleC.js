@@ -15,7 +15,7 @@ try{
 //retorna cliente x id
 export const getPedidosDetallexid = async(req, res)=>{
 try{
-    const [result] = await conmysql.query(' select * from pedidos_detalle where det_id=? ', [req.params.id])
+    const [result] = await conmysql.query(' select * from pedidos_detalle where det_id=? ', [req.body])
     if(result.length<=0) return res.status(400).json({
         cli_id:0,
         message: "PedidoDetalle no encontrado"
