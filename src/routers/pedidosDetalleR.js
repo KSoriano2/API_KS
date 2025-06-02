@@ -10,5 +10,5 @@ router.post('/pedidos_detalle', postPedidosDetalle )
 router.put('/pedidos_detalle/:id', putPedidosDetalle )
 router.patch('/pedidos_detalle/:id', patchPedidosDetalle )
 router.delete('/pedidos_detalle/:id', deletePedidosDetallexid)
-router.get('/pedidos_detalle', getPedidosDetallexPedido)
+router.get('/pedidos_detalle/:id', getPedidosDetallexPedido)
 export default router; 
