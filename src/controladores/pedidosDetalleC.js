@@ -119,7 +119,7 @@ try{
         message: "PedidoDetalle no encontrado"
     })
 
-    res.json(result[0])
+     resp.json({ result })
 
 } catch (error){
     return res.status(500).json({ message: "error en el servidor"})
